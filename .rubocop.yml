@@ -1,0 +1,48 @@
+require:
+  - rubocop-rails
+
+# Ignore some common auto-generated files
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '**/*/*schema.rb'
+    - bin/bundle
+    - bin/rails
+    - bin/rake
+    - bin/setup
+    - bin/spring
+    - bin/importmap
+    - bin/tapioca
+    - 'vendor/gems/**/*'
+    - 'lib/tasks/*.rake'
+
+Layout/IndentationStyle:
+  EnforcedStyle: tabs
+
+Layout/IndentationWidth:
+  Width: 1
+
+Metrics/BlockLength:
+  AllowedMethods: [
+    # Ignore some test specific wrapping blocks that usually get long
+    'describe',
+    'it',
+  ]
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*
+
+# Make sure this matches config/environments/*
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - staging
+    - test
+
+Style/Documentation:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false

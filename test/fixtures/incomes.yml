@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: incomes
+#
+#  id         :uuid             not null, primary key
+#  amount     :integer          not null
+#  end_date   :date
+#  frequency  :string           not null
+#  pay_day    :string
+#  payer      :string           not null
+#  start_date :date             not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  payee_id   :uuid             not null
+#
+# Indexes
+#
+#  index_incomes_on_payee_id  (payee_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (payee_id => users.id)
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the "{}" from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
